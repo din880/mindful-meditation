@@ -40,8 +40,8 @@ button{font:inherit;border:0;cursor:pointer}.primary{background:var(--lav);color
 .listrow:last-child{border:0}.listrow small{display:block;color:var(--muted);margin-top:4px}
 .soundbtn{background:#303d5c;color:var(--text);border-radius:14px;padding:11px 13px}
 .soundbtn.on{background:#a9d9cb;color:#132b2c}
-textarea{width:100%;min-height:86px;background:#111b30;border:1px solid var(--line);border-radius:14px;padding:12px;color:var(--text);font:inherit}
-nav{position:fixed;bottom:0;left:0;right:0;background:#111a2eee;backdrop-filter:blur(18px);border-top:1px solid #ffffff12;padding:10px 15px calc(10px + env(safe-area-inset-bottom));display:flex;justify-content:center;gap:42px;z-index:5}
+audio{display:block;margin:10px 0 16px;height:38px} textarea{width:100%;min-height:86px;background:#111b30;border:1px solid var(--line);border-radius:14px;padding:12px;color:var(--text);font:inherit}
+nav{position:fixed;bottom:0;left:0;right:0;background:#111a2eee;backdrop-filter:blur(18px);border-top:1px solid #ffffff12;padding:10px 15px calc(10px + env(safe-area-inset-bottom));display:flex;justify-content:center;gap:clamp(10px,4vw,26px);z-index:5}
 nav button{background:none;color:var(--muted);font-size:11px;display:grid;gap:4px;justify-items:center}nav button.active{color:var(--lav)}nav b{font-size:19px}
 .note{font-size:12px;color:var(--muted);line-height:1.5}
 input[type=range]{width:100%;accent-color:var(--lav)}
@@ -105,12 +105,40 @@ input[type=range]{width:100%;accent-color:var(--lav)}
 <div class="card"><b>About Mindful</b><p class="note">A private, lightweight meditation companion. Your session controls run on this device. It is not a medical treatment or a substitute for professional care.</p><p class="note">For the best experience, use headphones at a comfortable volume.</p></div>
 <div class="card"><b>Install on iPhone</b><p class="note">Open this app in Safari, tap Share, then choose “Add to Home Screen”. Once installed and first opened online, the core app can work offline.</p></div>
 </main>
+
+<main id="library" class="screen">
+<div class="section"><h2>Meditation library</h2><small>Free guided audio</small></div>
+<p class="note">Selected guided meditations from UCLA Mindful. Streamed from the original publisher; internet access is required. Recordings are provided unchanged with attribution.</p>
+<div class="card"><div class="eyebrow">UCLA MINDFUL · GUIDED AUDIO</div><h3>Breathing & grounding</h3>
+<div class="listrow"><div><b>Breathing Meditation</b><small>5 minutes · settle attention on the breath</small></div></div>
+<audio controls preload="none" style="width:100%" src="https://d1cy5zxxhbcbkk.cloudfront.net/guided-meditations/01_Breathing_Meditation.mp3"></audio>
+<div class="listrow"><div><b>Short Body Scan</b><small>3 minutes · notice sensations in the body</small></div></div>
+<audio controls preload="none" style="width:100%" src="https://d1cy5zxxhbcbkk.cloudfront.net/guided-meditations/Body-Scan-Meditation.mp3"></audio>
+<div class="listrow"><div><b>Breath, Sound, Body</b><small>12 minutes · widen awareness gently</small></div></div>
+<audio controls preload="none" style="width:100%" src="https://d1cy5zxxhbcbkk.cloudfront.net/guided-meditations/02_Breath_Sound_Body_Meditation.mp3"></audio></div>
+<div class="card"><div class="eyebrow">REST & EMOTIONAL WELLBEING</div><h3>Relaxation and compassion</h3>
+<div class="listrow"><div><b>Body Scan for Sleep</b><small>13 minutes · unwind before rest</small></div></div>
+<audio controls preload="none" style="width:100%" src="https://d1cy5zxxhbcbkk.cloudfront.net/guided-meditations/Body-Scan-for-Sleep.mp3"></audio>
+<div class="listrow"><div><b>Loving Kindness Meditation</b><small>9 minutes · cultivate goodwill</small></div></div>
+<audio controls preload="none" style="width:100%" src="https://d1cy5zxxhbcbkk.cloudfront.net/guided-meditations/05_Loving_Kindness_Meditation.mp3"></audio>
+<div class="listrow"><div><b>Working with Difficulties</b><small>7 minutes · meet difficult feelings with care</small></div></div>
+<audio controls preload="none" style="width:100%" src="https://d1cy5zxxhbcbkk.cloudfront.net/guided-meditations/04_Meditation_for_Working_with_Difficulties.mp3"></audio>
+<div class="listrow"><div><b>Complete Meditation Instructions</b><small>19 minutes · foundational practice</small></div></div>
+<audio controls preload="none" style="width:100%" src="https://d1cy5zxxhbcbkk.cloudfront.net/guided-meditations/03_Complete_Meditation_Instructions.mp3"></audio></div>
+<div class="section"><h2>Learn and explore</h2><small>Free resources</small></div>
+<div class="wide"><div class="ico">📖</div><div style="flex:1"><strong>Free Mindfulness Project</strong><small>Breathing, body scans, sitting practice and guided imagery</small><a href="https://www.freemindfulness.org/download" target="_blank" rel="noopener" style="color:#c6b5ff;font-size:13px">Open free resource collection ↗</a></div></div>
+<div class="wide"><div class="ico">🎓</div><div style="flex:1"><strong>UCLA Mindful practice guide</strong><small>Guided meditations, transcripts and mindfulness introductions</small><a href="https://www.uclahealth.org/uclamindful/guided-meditations" target="_blank" rel="noopener" style="color:#c6b5ff;font-size:13px">Open UCLA library ↗</a></div></div>
+<div class="wide"><div class="ico">🌱</div><div style="flex:1"><strong>Mindfulness basics</strong><small>Posture, attention and gently returning to the breath</small><a href="https://www.uclahealth.org/programs/uclamindful/free-guided-meditations/getting-started" target="_blank" rel="noopener" style="color:#c6b5ff;font-size:13px">Read beginner guide ↗</a></div></div>
+<div class="card"><h3>Three simple practices</h3><p><b>Mindful pause · 1 minute</b><br><span class="note">Notice three things you can feel, two things you can hear, and one thing you can see.</span></p><p><b>Gratitude reflection · 2 minutes</b><br><span class="note">Name one small thing that supported you today. Pause and notice how it feels to appreciate it.</span></p><p><b>Evening release · 3 minutes</b><br><span class="note">Relax your jaw and shoulders. Let the exhale soften. Set down one thing you do not need to carry into the night.</span></p></div>
+<p class="note">Attribution: UCLA Mindful guided meditations by Diana Winston and collaborators, © The Regents of the University of California, licensed CC BY-NC-ND 4.0. Used as unchanged streams for non-commercial personal practice. Recordings remain hosted by UCLA. <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">License details</a>.</p>
+</main>
+
 </div>
 <nav>
 <button class="active" data-tab="home" onclick="showTab('home')"><b>⌂</b>Home</button>
 <button data-tab="practice" onclick="showTab('practice')"><b>◉</b>Practice</button>
 <button data-tab="sounds" onclick="showTab('sounds')"><b>♫</b>Sounds</button>
-<button data-tab="settings" onclick="showTab('settings')"><b>⚙</b>Settings</button>
+<button data-tab="settings" onclick="showTab('settings')"><b>⚙</b>Settings</button><button data-tab="library" onclick="showTab('library')"><b>▤</b>Library</button>
 </nav>
 <script>
 let current='guided', duration=300, remaining=300, interval=null, running=false;
