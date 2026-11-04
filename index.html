@@ -12,14 +12,14 @@
 <title>Mindful — Meditation & Inner Peace</title>
 <style>
 :root{--bg:#10182b;--panel:#1a2540;--panel2:#202d4a;--text:#f3f1fa;--muted:#aeb8cf;--lav:#c6b5ff;--mint:#a9d9cb;--line:#34415e}
-*{box-sizing:border-box} body{margin:0;background:radial-gradient(ellipse at 50% -20%,#354064 0%,var(--bg) 55%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
+*{box-sizing:border-box} body{margin:0;background:radial-gradient(ellipse at 50% -20%,#354064 0%,var(--bg) 55%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 .app{max-width:520px;margin:auto;padding:env(safe-area-inset-top) 18px calc(88px + env(safe-area-inset-bottom))}
 header{display:flex;align-items:center;justify-content:space-between;padding:18px 2px 14px}
 .brand{font-size:22px;font-weight:700;letter-spacing:.3px}.brand span{color:var(--lav)}
 .sub{color:var(--muted);font-size:13px;margin-top:4px}.avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#2b3655;color:var(--lav);font-size:20px}
 .hero{border-radius:26px;padding:23px 22px;background:linear-gradient(145deg,#394568,#202c4a 70%,#26334e);position:relative;overflow:hidden;min-height:205px}
 .hero:after{content:"";position:absolute;width:190px;height:190px;border-radius:50%;right:-55px;top:-50px;border:1px solid #bcb0e555;box-shadow:0 0 0 20px #bcb0e510,0 0 0 42px #bcb0e508}
-.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#d3c9ff}.hero h1{font-size:28px;line-height:1.16;margin:12px 0 8px;max-width:280px}.hero p{color:#d0d7e8;font-size:14px;line-height:1.5;max-width:265px;margin:0 0 16px}
+.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#d3c9ff}.hero h1{font-size:28px;line-height:1.16;margin:12px 0 8px;max-width:280px}.hero p{color:#d0d7e8;font-size:14px;line-height:1.5}
 button{font:inherit;border:0;cursor:pointer}.primary{background:var(--lav);color:#20203b;padding:12px 17px;border-radius:15px;font-weight:700}
 .section{margin:25px 0 13px;display:flex;justify-content:space-between;align-items:center}.section h2{font-size:18px;margin:0}.section small{color:var(--muted)}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -30,7 +30,7 @@ button{font:inherit;border:0;cursor:pointer}.primary{background:var(--lav);color
 .screen{display:none}.screen.active{display:block}
 .back{background:none;color:var(--lav);padding:9px 0;font-weight:600}
 .card{background:var(--panel);border:1px solid #ffffff12;border-radius:22px;padding:20px;margin:14px 0}
-.center{text-align:center}.orb{width:190px;height:190px;border-radius:50%;margin:24px auto;background:radial-gradient(circle,#a9d9cb44,#a9d9cb08 65%);border:1px solid #a9d9cb77;display:grid;place-items:center;box-shadow:0 0 55px #a9d9cb16}
+.center{text-align:center}.orb{width:190px;height:190px;border-radius:50%;margin:24px auto;background:radial-gradient(circle,#a9d9cb44,#a9d9cb08 65%);border:1px solid #a9d9cb77;display:grid;place-items:center}
 .orb span{font-size:20px;color:var(--mint);font-weight:600}
 .timer{font-size:42px;font-weight:300;letter-spacing:2px;margin:12px}
 .controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:18px 0}
@@ -41,10 +41,11 @@ button{font:inherit;border:0;cursor:pointer}.primary{background:var(--lav);color
 .soundbtn{background:#303d5c;color:var(--text);border-radius:14px;padding:11px 13px}
 .soundbtn.on{background:#a9d9cb;color:#132b2c}
 audio{display:block;margin:10px 0 16px;height:38px} textarea{width:100%;min-height:86px;background:#111b30;border:1px solid var(--line);border-radius:14px;padding:12px;color:var(--text);font:inherit}
-nav{position:fixed;bottom:0;left:0;right:0;background:#111a2eee;backdrop-filter:blur(18px);border-top:1px solid #ffffff12;padding:10px 15px calc(10px + env(safe-area-inset-bottom));display:flex;justify-content:center;gap:clamp(10px,4vw,26px);z-index:5}
-nav button{background:none;color:var(--muted);font-size:11px;display:grid;gap:4px;justify-items:center}nav button.active{color:var(--lav)}nav b{font-size:19px}
+nav{position:fixed;bottom:0;left:0;right:0;background:#111a2eee;backdrop-filter:blur(18px);border-top:1px solid #ffffff12;padding:10px 15px calc(10px + env(safe-area-inset-bottom));display:flex;justify-content:space-between;z-index:20}
+nav button{background:none;color:var(--muted);font-size:11px;display:grid;gap:4px;justify-items:center;padding:0 4px}nav button.active{color:var(--lav)}nav b{font-size:19px}
 .note{font-size:12px;color:var(--muted);line-height:1.5}
 input[type=range]{width:100%;accent-color:var(--lav)}
+a{color:var(--lav);text-decoration:none}
 @media(min-width:600px){body{padding:20px 0}.app{border:1px solid #ffffff12;border-radius:28px;min-height:850px;background:#10182b}}
 </style>
 </head>
@@ -53,13 +54,15 @@ input[type=range]{width:100%;accent-color:var(--lav)}
 <header><div><div class="brand">☾ <span>mindful</span></div><div class="sub">A little stillness, every day</div></div><div class="avatar">ॐ</div></header>
 
 <main id="home" class="screen active">
-<section class="hero"><div class="eyebrow">YOUR DAILY PAUSE</div><h1>Come back to yourself.</h1><p>Take a breath. Let the noise settle. This moment is yours.</p><button class="primary" onclick="openSession('morning')">Begin a moment&nbsp; →</button></section>
+<section class="hero"><div class="eyebrow">YOUR DAILY PAUSE</div><h1>Come back to yourself.</h1><p>Take a breath. Let the noise settle. This moment is yours.</p><button class="primary" onclick="openSession('guided')">Start a session</button></section>
 <div class="section"><h2>Explore your practice</h2><small>Made for you</small></div>
 <div class="grid">
 <button class="tile" onclick="openSession('guided')"><div class="ico">🧘</div><strong>Guided meditation</strong><small>Find quiet in the present moment</small></button>
 <button class="tile" onclick="openSession('breathing')"><div class="ico">🌬️</div><strong>Breathing</strong><small>Slow down with gentle rhythms</small></button>
+<button class="tile" onclick="openSession('bodyscan')"><div class="ico">🫧</div><strong>Body scan</strong><small>Notice what is happening in the body</small></button>
+<button class="tile" onclick="openSession('lovingkindness')"><div class="ico">💛</div><strong>Loving-kindness</strong><small>Open to warmth and compassion</small></button>
 <button class="tile" onclick="openSession('sleep')"><div class="ico">🌙</div><strong>Sleep meditation</strong><small>Unwind and prepare for rest</small></button>
-<button class="tile" onclick="openSession('stress')"><div class="ico">🌿</div><strong>Stress relief</strong><small>Release tension, one breath at a time</small></button>
+<button class="tile" onclick="openSession('grounding')"><div class="ico">🌿</div><strong>Grounding reset</strong><small>Return to the present when thoughts race</small></button>
 </div>
 <div class="section"><h2>Nature sounds</h2><small>Listen and unwind</small></div>
 <div class="wide"><div class="ico">🌧️</div><div style="flex:1"><strong>Rain on a quiet evening</strong><small>Soft ambient soundscape</small></div><button class="soundbtn" id="rainBtn" onclick="toggleSound('rain')">Play</button></div>
@@ -70,10 +73,12 @@ input[type=range]{width:100%;accent-color:var(--lav)}
 
 <main id="practice" class="screen">
 <div class="section"><h2>Your practice</h2><small>Choose a session</small></div>
-<div class="card"><div class="eyebrow">A SIMPLE START</div><h2>Five minutes of calm</h2><p class="note">Sit comfortably, soften your shoulders, and let your attention rest on the breath.</p><button class="primary" onclick="openSession('guided')">Start guided meditation</button></div>
+<div class="card"><div class="eyebrow">A SIMPLE START</div><h2>Five minutes of calm</h2><p class="note">Sit comfortably, soften your shoulders, and let your attention rest on the breath.</p><button class="secondary" onclick="openSession('guided')">Begin</button></div>
 <div class="listrow"><div>🌬️ <b>Box breathing</b><small>4 minutes · steady your breathing</small></div><button class="secondary" onclick="openSession('breathing')">Start</button></div>
-<div class="listrow"><div>🌿 <b>Release the stress</b><small>6 minutes · relax your body</small></div><button class="secondary" onclick="openSession('stress')">Start</button></div>
+<div class="listrow"><div>🫧 <b>Body scan</b><small>10 minutes · notice the body with care</small></div><button class="secondary" onclick="openSession('bodyscan')">Start</button></div>
+<div class="listrow"><div>💛 <b>Loving-kindness</b><small>8 minutes · warm the mind with compassion</small></div><button class="secondary" onclick="openSession('lovingkindness')">Start</button></div>
 <div class="listrow"><div>🌙 <b>Drift into sleep</b><small>10 minutes · settle for the night</small></div><button class="secondary" onclick="openSession('sleep')">Start</button></div>
+<div class="listrow"><div>🌿 <b>Grounding reset</b><small>4 minutes · return to the here and now</small></div><button class="secondary" onclick="openSession('grounding')">Start</button></div>
 </main>
 
 <main id="player" class="screen">
@@ -87,7 +92,7 @@ input[type=range]{width:100%;accent-color:var(--lav)}
 <p class="note" id="sessionPrompt">Allow your breathing to find its natural pace.</p>
 <div class="controls"><button class="primary" id="startBtn" onclick="toggleSession()">Start</button><button class="secondary" onclick="resetSession()">Reset</button></div>
 </div>
-<div class="card"><b>Guidance</b><p class="note" id="scriptText">Find a comfortable seat. Let your hands rest easily. Gently close your eyes, or soften your gaze. Notice the simple feeling of being here.</p><div class="controls"><button class="secondary" onclick="speakGuidance()">▶ Hear guidance</button><button class="secondary" onclick="stopSpeech()">Stop voice</button></div><p class="note">Voice uses an English male-sounding voice when one is available on your iPhone. Voice availability depends on iOS settings.</p></div>
+<div class="card"><b>Guidance</b><p class="note" id="scriptText">Find a comfortable seat. Let your hands rest easily. Gently close your eyes, or soften your gaze. Notice the simple feeling of being here.</p></div>
 </main>
 
 <main id="sounds" class="screen">
@@ -102,13 +107,13 @@ input[type=range]{width:100%;accent-color:var(--lav)}
 <main id="settings" class="screen">
 <div class="section"><h2>Settings</h2><small>Your mindful space</small></div>
 <div class="card"><b>Guidance voice</b><p class="note">The app requests an English male-sounding system voice where available.</p><button class="secondary" onclick="testVoice()">Test voice</button></div>
-<div class="card"><b>About Mindful</b><p class="note">A private, lightweight meditation companion. Your session controls run on this device. It is not a medical treatment or a substitute for professional care.</p><p class="note">For the best experience, use headphones at a comfortable volume.</p></div>
+<div class="card"><b>About Mindful</b><p class="note">A private, lightweight meditation companion. Your session controls run on this device. It is not a medical treatment or a substitute for professional support.</p></div>
 <div class="card"><b>Install on iPhone</b><p class="note">Open this app in Safari, tap Share, then choose “Add to Home Screen”. Once installed and first opened online, the core app can work offline.</p></div>
 </main>
 
 <main id="library" class="screen">
-<div class="section"><h2>Meditation library</h2><small>Free guided audio</small></div>
-<p class="note">Selected guided meditations from UCLA Mindful. Streamed from the original publisher; internet access is required. Recordings are provided unchanged with attribution.</p>
+<div class="section"><h2>Meditation library</h2><small>Free guided audio + text</small></div>
+<p class="note">This app includes a mix of free mindfulness resources and original short practices. Where an external source is used, attribution is preserved and the guidance is kept simple and accessible.</p>
 <div class="card"><div class="eyebrow">UCLA MINDFUL · GUIDED AUDIO</div><h3>Breathing & grounding</h3>
 <div class="listrow"><div><b>Breathing Meditation</b><small>5 minutes · settle attention on the breath</small></div></div>
 <audio controls preload="none" style="width:100%" src="https://d1cy5zxxhbcbkk.cloudfront.net/guided-meditations/01_Breathing_Meditation.mp3"></audio>
@@ -125,12 +130,21 @@ input[type=range]{width:100%;accent-color:var(--lav)}
 <audio controls preload="none" style="width:100%" src="https://d1cy5zxxhbcbkk.cloudfront.net/guided-meditations/04_Meditation_for_Working_with_Difficulties.mp3"></audio>
 <div class="listrow"><div><b>Complete Meditation Instructions</b><small>19 minutes · foundational practice</small></div></div>
 <audio controls preload="none" style="width:100%" src="https://d1cy5zxxhbcbkk.cloudfront.net/guided-meditations/03_Complete_Meditation_Instructions.mp3"></audio></div>
+<div class="card"><div class="eyebrow">FREE SOURCE MEDITATIONS</div><h3>More guided practices to add</h3>
+<div class="listrow"><div><b>Mindful breathing reset</b><small>3 minutes · a simple return to the breath</small></div></div>
+<div class="listrow"><div><b>Gratitude pause</b><small>5 minutes · gentle attention to what is already here</small></div></div>
+<div class="listrow"><div><b>Grounding for overwhelm</b><small>4 minutes · settle into the feet, body, and room</small></div></div>
+<div class="listrow"><div><b>Mindful walking</b><small>6 minutes · steady attention with each step</small></div></div>
+<div class="listrow"><div><b>Compassion for self</b><small>7 minutes · soften self-judgment with warmth</small></div></div>
+</div>
 <div class="section"><h2>Learn and explore</h2><small>Free resources</small></div>
-<div class="wide"><div class="ico">📖</div><div style="flex:1"><strong>Free Mindfulness Project</strong><small>Breathing, body scans, sitting practice and guided imagery</small><a href="https://www.freemindfulness.org/download" target="_blank" rel="noopener" style="color:#c6b5ff;font-size:13px">Open free resource collection ↗</a></div></div>
-<div class="wide"><div class="ico">🎓</div><div style="flex:1"><strong>UCLA Mindful practice guide</strong><small>Guided meditations, transcripts and mindfulness introductions</small><a href="https://www.uclahealth.org/uclamindful/guided-meditations" target="_blank" rel="noopener" style="color:#c6b5ff;font-size:13px">Open UCLA library ↗</a></div></div>
-<div class="wide"><div class="ico">🌱</div><div style="flex:1"><strong>Mindfulness basics</strong><small>Posture, attention and gently returning to the breath</small><a href="https://www.uclahealth.org/programs/uclamindful/free-guided-meditations/getting-started" target="_blank" rel="noopener" style="color:#c6b5ff;font-size:13px">Read beginner guide ↗</a></div></div>
-<div class="card"><h3>Three simple practices</h3><p><b>Mindful pause · 1 minute</b><br><span class="note">Notice three things you can feel, two things you can hear, and one thing you can see.</span></p><p><b>Gratitude reflection · 2 minutes</b><br><span class="note">Name one small thing that supported you today. Pause and notice how it feels to appreciate it.</span></p><p><b>Evening release · 3 minutes</b><br><span class="note">Relax your jaw and shoulders. Let the exhale soften. Set down one thing you do not need to carry into the night.</span></p></div>
-<p class="note">Attribution: UCLA Mindful guided meditations by Diana Winston and collaborators, © The Regents of the University of California, licensed CC BY-NC-ND 4.0. Used as unchanged streams for non-commercial personal practice. Recordings remain hosted by UCLA. <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">License details</a>.</p>
+<div class="wide"><div class="ico">📖</div><div style="flex:1"><strong>Free Mindfulness Project</strong><small>Breathing, body scans, sitting practice and guided imagery</small><a href="https://www.freemindfulness.org/download">Open</a></div></div>
+<div class="wide"><div class="ico">🎓</div><div style="flex:1"><strong>UCLA Mindful practice guide</strong><small>Guided meditations, transcripts and mindfulness introductions</small><a href="https://www.uclahealth.org/mindful">Open</a></div></div>
+<div class="wide"><div class="ico">🌱</div><div style="flex:1"><strong>Conscious Cues</strong><small>Free scripts for mindfulness, breathing, gratitude and compassion</small><a href="https://consciouscues.com/resources/free-meditation-scripts-pdf/">Open</a></div></div>
+<div class="card"><h3>Three simple practices</h3><p><b>Mindful pause · 1 minute</b><br><span class="note">Notice three things you can feel, two things you can hear, and one thing you can see.</span></p>
+<p><b>Body scan · 3 minutes</b><br><span class="note">Move attention from your feet upward and notice sensation without needing to change anything.</span></p>
+<p><b>Compassion breath · 2 minutes</b><br><span class="note">Breathe in warmth; breathe out softness toward yourself and others.</span></p></div>
+<p class="note">Source note: Free mindfulness resources are included for education and personal practice. Please keep attribution and review the original source terms before reusing or redistributing any external script in a public app or commercial project.</p>
 </main>
 
 </div>
@@ -144,27 +158,33 @@ input[type=range]{width:100%;accent-color:var(--lav)}
 let current='guided', duration=300, remaining=300, interval=null, running=false;
 let audioCtx=null, soundNodes={}, master=null, speech=null, volume=.35;
 const sessions={
- morning:{title:'A gentle beginning',tag:'DAILY MEDITATION',mins:5,desc:'Begin the day with a clear and steady mind.',prompt:'Notice the breath arriving, and leaving.',script:'Settle into a comfortable position. Let your shoulders soften. Take a gentle breath in, and slowly breathe out. Feel the support beneath you. There is nothing you need to solve in this moment. Simply notice the breath, and return to it whenever your mind wanders. Meet this moment with patience.'},
- guided:{title:'A moment of calm',tag:'GUIDED MEDITATION',mins:5,desc:'Rest your attention in the present moment.',prompt:'Allow your breathing to find its natural pace.',script:'Find a comfortable seat. Let your hands rest easily. Gently close your eyes, or soften your gaze. Notice the simple feeling of being here. Feel the ground supporting you. Bring your attention to the breath. There is no need to change it. When thoughts appear, acknowledge them gently and return to the next breath. Let your face soften. Let your shoulders release. Stay with this quiet moment.'},
- breathing:{title:'Box breathing',tag:'BREATHING EXERCISE',mins:4,desc:'A gentle four-part breathing rhythm.',prompt:'Inhale, hold, exhale, hold — each for four counts.',script:'Sit comfortably and breathe gently. Inhale for four counts. Pause for four. Exhale slowly for four. Pause for four. Keep the breath comfortable; do not strain or force it. If you feel light-headed, return to normal breathing. Let each cycle be easy and unhurried.'},
- sleep:{title:'Prepare for sleep',tag:'SLEEP MEDITATION',mins:10,desc:'Let the day settle and welcome rest.',prompt:'Release the day, one soft breath at a time.',script:'Lie down and allow your body to be supported. Unclench your jaw. Let your shoulders grow heavy. Feel the bed beneath you. There is nothing more you need to do tonight. With each exhale, imagine setting down one small piece of the day. Let your breathing be natural. If thoughts come, let them pass without following. Rest here, gently.'},
- stress:{title:'Release the tension',tag:'STRESS RELIEF',mins:6,desc:'Make room for a little more ease.',prompt:'Soften your hands, jaw and shoulders.',script:'Pause where you are, if it is safe to do so. Feel your feet supported. Breathe in gently, and make the exhale a little longer if comfortable. Notice where your body is holding tension. You do not need to force it away. Allow the muscles around your eyes to soften. Release your jaw. Lower your shoulders. Take this one breath at a time.'}
+ morning:{title:'A gentle beginning',tag:'DAILY MEDITATION',mins:5,desc:'Begin the day with a clear and steady mind.',prompt:'Notice the breath arriving, and leaving.',script:'Settle into a comfortable position. Let your shoulders soften. Notice the support beneath you. As you inhale, picture a slow wave of calm moving through you. As you exhale, release any tension you are carrying. Let the mind be gentle with itself. When thoughts appear, return to the breath without judgment. Stay here for a few more breaths, resting in clarity.'},
+ guided:{title:'A moment of calm',tag:'GUIDED MEDITATION',mins:5,desc:'Rest your attention in the present moment.',prompt:'Allow your breathing to find its natural pace.',script:'Find a comfortable seat. Let your hands rest easily. Gently close your eyes, or soften your gaze. Notice the simple feeling of being here. Feel the breath move in and out without trying to change it. With each exhale, let the body become a little more relaxed. If the mind wanders, return softly to the breath. You are not behind. You are simply here.'},
+ breathing:{title:'Box breathing',tag:'BREATHING EXERCISE',mins:4,desc:'A gentle four-part breathing rhythm.',prompt:'Inhale, hold, exhale, hold — each for four counts.',script:'Sit comfortably and let your spine be tall but easy. Inhale through the nose for four counts. Hold for four. Exhale for four. Hold for four. Repeat the cycle slowly. Let the breath be smooth and unforced. If the counting becomes distracting, simply return to the feeling of the breath. Each round settles the nervous system.'},
+ sleep:{title:'Prepare for sleep',tag:'SLEEP MEDITATION',mins:10,desc:'Let the day settle and welcome rest.',prompt:'Release the day, one soft breath at a time.',script:'Lie down and allow your body to sink into the support beneath you. Notice the breath settling into a slower rhythm. Let the eyes soften. Imagine the day drifting away like a long conversation fading into the distance. With each exhale, let one detail of the day let go. Feel your jaw, belly, and shoulders soften. You do not need to solve anything now. Only rest.'},
+ stress:{title:'Release the tension',tag:'STRESS RELIEF',mins:6,desc:'Make room for a little more ease.',prompt:'Soften your hands, jaw and shoulders.',script:'Pause where you are, if it is safe to do so. Notice any clenched area in your body. Let your jaw loosen, your brows relax, and your shoulders drop a little lower. Take a slow breath in and imagine a wave of relief moving through the chest. Exhale with a little more length than the inhale. Allow the mind to slow. As tension releases, do not force it. Just invite it to dissolve.'},
+ bodyscan:{title:'Body scan',tag:'BODY SCAN',mins:10,desc:'Move gently through the body and notice sensation without force.',prompt:'Let your attention land softly on each part of the body.',script:'Begin by noticing the feet resting on the ground or the body supported by the bed or chair. Slowly bring attention to the toes, then the soles of the feet, the ankles, calves, knees, thighs, and hips. Continue upward through the belly, lower back, chest, shoulders, neck, jaw, eyes, and forehead. Feel each area as it is, without trying to change it. If you notice tension, simply name it and soften around it. Let the breath support your return.'},
+ lovingkindness:{title:'Loving-kindness',tag:'LOVING-KINDNESS',mins:8,desc:'Cultivate warmth and goodwill toward yourself and others.',prompt:'Repeat the phrases with ease and gentleness.',script:'Place a hand lightly on your heart or rest your hands in your lap. Bring attention to a feeling of warmth. Silently repeat: “May I be safe. May I be peaceful. May I be healthy. May I be at ease.” Then widen the wish to someone you love, then to someone neutral, then to someone difficult. Finally, send the same wish outward to all beings. Keep the phrases soft and kind. Compassion begins with a gentle intention.'},
+ gratitude:{title:'Gratitude pause',tag:'GRATITUDE',mins:5,desc:'Open gently to what is already here.',prompt:'Notice one thing you can appreciate without effort.',script:'Let the breath come back to the body. Bring awareness to something simple that is already present: sunlight, warmth, a chair, a friend, a breath. Name it quietly in your mind. Let the feeling of appreciation settle without trying to force emotion. You do not need a long list. One sincere moment of gratitude is enough. Let the heart feel a little more open.'},
+ grounding:{title:'Grounding reset',tag:'GROUNDING',mins:4,desc:'Return to the present when thoughts feel crowded.',prompt:'Feel your feet, the chair, and the room around you.',script:'Plant both feet on the ground if you are sitting or standing. Notice the contact between your body and the surface beneath you. Feel the weight of your body and the points of contact with the chair, the floor, or the bed. Look around the room and notice five things you can see, three things you can hear, and two things you can feel. Let the senses anchor you in the present, one breath at a time.'},
+ mindfulwalk:{title:'Mindful walking',tag:'MINDFUL WALK',mins:6,desc:'Use each step as a moment of attention.',prompt:'Feel the feet meet the ground and the breath steady you.',script:'Stand or walk slowly, either indoors or outside. Notice the sensation of each step: heel to floor, weight shifting, the body moving forward. Let your breath fall into a natural rhythm. If you notice thoughts pulling you away, gently return to the movement of the feet. You do not need to conquer the mind. Just keep returning to the body and the path.'},
+ focus:{title:'Focused calm',tag:'FOCUS',mins:5,desc:'Bring clarity to one task or one breath at a time.',prompt:'Rest your attention on a single point and let everything else soften.',script:'Choose one small focus: the breath, a candle flame, the sound of the room, or the sensation of your hands. Let your attention rest there without pushing. If the mind drifts, notice it and return with kindness. This practice is not about emptying the mind. It is about creating a little room for clarity, and giving yourself the chance to begin again.'}
 };
-function showTab(id){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('active',x.dataset.tab===id));if(id!=='player')stopSession();}
-function openSession(id){current=id;let s=sessions[id];duration=s.mins*60;remaining=duration;document.getElementById('sessionTag').textContent=s.tag;document.getElementById('sessionTitle').textContent=s.title;document.getElementById('sessionDesc').textContent=s.desc;document.getElementById('sessionPrompt').textContent=s.prompt;document.getElementById('scriptText').textContent=s.script;document.getElementById('breathCue').textContent=id==='breathing'?'Breathe':'Be here';updateTimer();document.getElementById('startBtn').textContent='Start';document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));document.getElementById('player').classList.add('active');document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));}
+function showTab(id){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));}
+function openSession(id){current=id;let s=sessions[id];duration=s.mins*60;remaining=duration;document.getElementById('sessionTag').textContent=s.tag;document.getElementById('sessionTitle').textContent=s.title;document.getElementById('sessionDesc').textContent=s.desc;document.getElementById('sessionPrompt').textContent=s.prompt;document.getElementById('scriptText').textContent=s.script;document.getElementById('breathCue').textContent=s.tag==='BREATHING EXERCISE'?'Breathe':'Be here';showTab('player');updateTimer();resetSession();}
 function updateTimer(){let m=Math.floor(remaining/60),s=remaining%60;document.getElementById('timer').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')}
-function toggleSession(){if(running){stopSession();document.getElementById('startBtn').textContent='Resume';return}running=true;document.getElementById('startBtn').textContent='Pause';interval=setInterval(()=>{remaining=Math.max(0,remaining-1);updateTimer();if(current==='breathing'){let phase=16-((duration-remaining)%16), cue=phase>12?'Inhale':phase>8?'Hold':phase>4?'Exhale':'Hold';document.getElementById('breathCue').textContent=cue;document.getElementById('breathOrb').style.transform=phase>8?'scale(1.12)':'scale(.88)'}if(remaining===0){stopSession();document.getElementById('startBtn').textContent='Completed';document.getElementById('sessionPrompt').textContent='Your session is complete. Take a moment before moving on.'}},1000)}
+function toggleSession(){if(running){stopSession();document.getElementById('startBtn').textContent='Resume';return}running=true;document.getElementById('startBtn').textContent='Pause';interval=setInterval(()=>{remaining=Math.max(0,remaining-1);updateTimer();if(remaining<=0){stopSession();document.getElementById('startBtn').textContent='Complete';document.getElementById('breathCue').textContent='Complete';return}if(current==='breathing'){let cues=['Inhale','Hold','Exhale','Hold'];let idx=Math.floor((duration-remaining)/(duration/4))%cues.length;document.getElementById('breathCue').textContent=cues[idx];}else{document.getElementById('breathCue').textContent=remaining%2===0?'Breathe':'Let go';}},1000);}
 function stopSession(){if(interval)clearInterval(interval);interval=null;running=false}
-function resetSession(){stopSession();remaining=duration;updateTimer();document.getElementById('startBtn').textContent='Start';document.getElementById('breathCue').textContent=current==='breathing'?'Breathe':'Be here';document.getElementById('breathOrb').style.transform='scale(1)'}
-function speakGuidance(){stopSpeech();let text=sessions[current].script;if(!('speechSynthesis'in window)){alert('Speech is not available in this browser.');return}speech=new SpeechSynthesisUtterance(text);speech.lang='en-US';let voices=speechSynthesis.getVoices();let male=voices.find(v=>/male|daniel|alex|aaron|fred|guy/i.test(v.name));if(male)speech.voice=male;speech.rate=.88;speech.pitch=.88;speechSynthesis.speak(speech)}
+function resetSession(){stopSession();remaining=duration;updateTimer();document.getElementById('startBtn').textContent='Start';document.getElementById('breathCue').textContent=current==='breathing'?'Breathe':'Be here'}
+function speakGuidance(){stopSpeech();let text=sessions[current].script;if(!('speechSynthesis'in window)){alert('Speech is not available in this browser.');return}speech=new SpeechSynthesisUtterance(text);speech.rate=0.95;speech.pitch=1;speech.volume=1;speechSynthesis.speak(speech)}
 function stopSpeech(){if('speechSynthesis'in window)speechSynthesis.cancel()}
 function testVoice(){current='guided';speakGuidance()}
 function ensureAudio(){if(!audioCtx){audioCtx=new (window.AudioContext||window.webkitAudioContext)();master=audioCtx.createGain();master.gain.value=volume;master.connect(audioCtx.destination)}if(audioCtx.state==='suspended')audioCtx.resume()}
-function toggleSound(type){if(soundNodes[type]){soundNodes[type].stop();delete soundNodes[type];setSoundButtons();return}ensureAudio();let ctx=audioCtx, gain=ctx.createGain();gain.gain.value=type==='rain'?.23:type==='ocean'?.28:.13;gain.connect(master);let nodes=[];
-if(type==='rain'||type==='forest'){let size=2*ctx.sampleRate,buf=ctx.createBuffer(1,size,ctx.sampleRate),data=buf.getChannelData(0);for(let i=0;i<size;i++)data[i]=(Math.random()*2-1);let src=ctx.createBufferSource();src.buffer=buf;src.loop=true;let filter=ctx.createBiquadFilter();filter.type=type==='rain'?'lowpass':'bandpass';filter.frequency.value=type==='rain'?1600:650;src.connect(filter);filter.connect(gain);src.start();nodes.push(src,filter)}
-else{let osc=ctx.createOscillator(),lfo=ctx.createOscillator(),mod=ctx.createGain();osc.type='sine';osc.frequency.value=95;lfo.frequency.value=.09;mod.gain.value=35;lfo.connect(mod);mod.connect(osc.frequency);osc.connect(gain);osc.start();lfo.start();nodes.push(osc,lfo,mod)}
-soundNodes[type]={stop:()=>{nodes.forEach(n=>{try{n.stop&&n.stop()}catch(e){}try{n.disconnect()}catch(e){}});gain.disconnect()}};setSoundButtons()}
-function setSoundButtons(){['rain','ocean','forest'].forEach(t=>{let on=!!soundNodes[t];[t+'Btn',t+'Btn2'].forEach(id=>{let b=document.getElementById(id);if(b){b.textContent=on?'Stop':'Play';b.classList.toggle('on',on)}})});let active=Object.keys(soundNodes);document.getElementById('soundStatus').textContent=active.length?'Playing: '+active.join(', '):'No sound playing'}
+function toggleSound(type){if(soundNodes[type]){soundNodes[type].stop();delete soundNodes[type];setSoundButtons();return}ensureAudio();let ctx=audioCtx, gain=ctx.createGain();gain.gain.value=.12;gain.connect(ctx.destination);let nodes=[];if(type==='rain'||type==='forest'){let size=2*ctx.sampleRate,buf=ctx.createBuffer(1,size,ctx.sampleRate),data=buf.getChannelData(0);for(let i=0;i<size;i++)data[i]=(Math.random()*2-1);let src=ctx.createBufferSource();src.buffer=buf;let filter=ctx.createBiquadFilter();filter.type='lowpass';filter.frequency.value=type==='rain'?1200:800;gain.gain.value=type==='rain'?.08:.1;src.connect(filter);filter.connect(gain);src.loop=true;src.start();nodes.push(src,filter);}
+else{let osc=ctx.createOscillator(),lfo=ctx.createOscillator(),mod=ctx.createGain();osc.type='sine';osc.frequency.value=95;lfo.frequency.value=.09;mod.gain.value=35;lfo.connect(mod);mod.connect(osc.frequency);osc.connect(gain);lfo.start();osc.start();nodes.push(osc,lfo,mod);}
+if(master){gain.connect(master)}
+soundNodes[type]={stop:()=>{nodes.forEach(n=>{try{n.stop&&n.stop()}catch(e){}try{n.disconnect()}catch(e){}});gain.disconnect();delete soundNodes[type];setSoundButtons();}};setSoundButtons();}
+function setSoundButtons(){['rain','ocean','forest'].forEach(t=>{let on=!!soundNodes[t];[t+'Btn',t+'Btn2'].forEach(id=>{let b=document.getElementById(id);if(b){b.textContent=on?'Stop':'Play';b.classList.toggle('on',on)}})})}
 function setVolume(v){volume=Number(v)/100;if(master)master.gain.setTargetAtTime(volume,audioCtx.currentTime,.08)}
 if('serviceWorker'in navigator && location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 </script>
